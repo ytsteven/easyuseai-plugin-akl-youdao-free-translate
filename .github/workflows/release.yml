@@ -2,7 +2,7 @@ name: Release Plugin
 on:
   push:
     paths:
-      - "bobplugin/dependOnService/src/info.json"
+      - "aiplugin/dependOnService/src/info.json"
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -16,28 +16,28 @@ jobs:
         uses: battila7/get-version-action@v2
 
       - name: Package plugin
-        run: mkdir release && zip -j -r release/bob-plugin-akl-youdao-free-translate.bobplugin ./bobplugin/dependOnService/src/*
+        run: mkdir release && zip -j -r release/easyuseai-plugin-akl-youdao-free-translate.aiplugin ./aiplugin/dependOnService/src/*
 
       - name: Get last commit title
         id: last-commit
         run: echo "::set-output name=last_commit_title::$(git log -1 --pretty=format:%s)"
 
-      - run: git checkout -- bobplugin/dependOnService/src/
+      - run: git checkout -- aiplugin/dependOnService/src/
 
       - name: Update appcast.json
         id: run_script
         run: |
-          output=$(python3 bobplugin/dependOnService/scripts/update_appcast.py "${{ steps.last-commit.outputs.last_commit_title }}")
+          output=$(python3 aiplugin/dependOnService/scripts/update_appcast.py "${{ steps.last-commit.outputs.last_commit_title }}")
           echo "version=$output" >> $GITHUB_OUTPUT
 
       - name: Package plugin final
-        run: mv release/bob-plugin-akl-youdao-free-translate.bobplugin release/bob-plugin-akl-youdao-free-translate_${{ steps.run_script.outputs.version }}.bobplugin
+        run: mv release/easyuseai-plugin-akl-youdao-free-translate.aiplugin release/easyuseai-plugin-akl-youdao-free-translate_${{ steps.run_script.outputs.version }}.aiplugin
 
       - name: Commit files
         run: |
           git config --global user.name 'akl7777777'
           git config --global user.email 'akl7777777@163.com'
-          git add bobplugin/dependOnService/appcast.json
+          git add aiplugin/dependOnService/appcast.json
           git commit -am 'update appcast.json'
 
       - name: Push changes
@@ -49,8 +49,8 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: release/bob-plugin-akl-youdao-free-translate_${{ steps.run_script.outputs.version }}.bobplugin
-          asset_name: bob-plugin-akl-youdao-free-translate_${{ steps.run_script.outputs.version }}.bobplugin
+          file: release/easyuseai-plugin-akl-youdao-free-translate_${{ steps.run_script.outputs.version }}.aiplugin
+          asset_name: easyuseai-plugin-akl-youdao-free-translate_${{ steps.run_script.outputs.version }}.aiplugin
           tag: ${{ steps.run_script.outputs.version }}
           overwrite: true
           body: "${{ steps.last-commit.outputs.last_commit_title }}"

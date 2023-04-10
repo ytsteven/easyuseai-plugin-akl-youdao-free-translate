@@ -1,14 +1,14 @@
 {
-  "identifier": "com.akl.bob-plugin-akl-youdao-free-translate",
+  "identifier": "com.akl.easyuseai-plugin-akl-youdao-free-translate",
   "version": "0.1.8",
   "category": "translate",
   "name": "Free 有道翻译",
   "summary": "有道翻译免费免秘钥插件",
   "icon": "icon.png",
   "author": "akl7777777 <akl7777777@163.com>",
-  "homepage": "https://github.com/akl7777777/bob-plugin-akl-youdao-free-translate",
-  "appcast": "https://raw.githubusercontent.com/akl7777777/bob-plugin-akl-youdao-free-translate/main/bobplugin/dependOnService/appcast.json",
-  "minBobVersion": "0.5.0",
+  "homepage": "https://github.com/ytsteven/easyuseai-plugin-akl-youdao-free-translate",
+  "appcast": "https://raw.githubusercontent.com/ytsteven/easyuseai-plugin-akl-youdao-free-translate/main/aiplugin/dependOnService/appcast.json",
+  "minVersion": "0.4.0",
   "options": [
     {
       "identifier": "desc",
