@@ -1,4 +1,4 @@
-# 正在迁移到[易用AI](https://easyuseai.com/)，进行中...
+# 已经迁移到易用AI，可下载[易用AI插件](https://github.com/ytsteven/easyuseai-plugin-akl-youdao-free-translate/releases)(.aiplugin)使用
 
 
 # bob-plugin-akl-youdao-free-translate
