@@ -1,4 +1,12 @@
 {
   "identifier": "com.akl.easyuseai-plugin-akl-youdao-free-translate",
-  "versions": []
+  "versions": [
+    {
+      "version": "0.0.2",
+      "desc": "upd",
+      "sha256": "5f677f087c50f437a0980672a302918c382112be97d110bdc964b2f66ad1e512",
+      "url": "https://github.com/ytsteven/easyuseai-plugin-akl-youdao-free-translate/releases/download/v0.0.2/easyuseai-plugin-akl-youdao-free-translate_v0.0.2.aiplugin",
+      "minVersion": "0.4.0"
+    }
+  ]
 }
